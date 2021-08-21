@@ -1,0 +1,56 @@
+body {
+    background-color: peachpuff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+}
+
+.fill-circle {
+    width:200px;
+    height:200px;
+    border: 4px solid rgb(41, 9, 184);
+    border-radius: 100px;
+    margin:0 auto;
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+.fill-circle::before {
+    content:'';
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:200px;
+    background-color: cadetblue;
+    animation: fill 4s ease 0s alternate infinite;
+    display: inline-block;
+
+}
+
+.fill-circle::after {
+    content:'FILL';
+    position: absolute;
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    color:rgb(41,0,184);
+    font-size:18px;
+    text-align: center;
+    z-index: 1;
+    line-height: 200px;
+    font-weight: bold;
+
+
+
+}
+
+
+@keyframes fill {
+    100% {
+        top:0;
+    }
+}
